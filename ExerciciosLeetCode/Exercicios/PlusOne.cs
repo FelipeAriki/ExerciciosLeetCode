@@ -4,7 +4,37 @@ public class PlusOne
 {
     public void Executar()
     {
-        
+        int[] digits = [1, 2, 3];
+
+        int[] resultado = PlusOneMetodo(digits);
+
+        Console.WriteLine($"[{string.Join(", ", resultado)}]");
+    }
+
+    public int[] PlusOneMetodo(int[] digits)
+    {
+        // Percorre o array de trás para frente
+        for (int i = digits.Length - 1; i >= 0; i--)
+        {
+            // Se o número for menor que 9,
+            // apenas soma 1 e retorna
+            if (digits[i] < 9)
+            {
+                digits[i]++;
+                return digits;
+            }
+
+            // Se for 9, vira 0 e continua o loop
+            digits[i] = 0;
+        }
+
+        // Se chegou aqui, significa que todos eram 9
+        // Ex: [9] -> [1,0]
+        // Ex: [9,9,9] -> [1,0,0,0]
+        int[] novoArray = new int[digits.Length + 1];
+        novoArray[0] = 1;
+
+        return novoArray;
     }
 }
 
