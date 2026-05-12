@@ -4,7 +4,25 @@ public class TwoSum
 {
     public void Executar()
     {
+        int[] array = { 3, 1, 3 };
+        int target = 6;
+        int[] result = TwoSumMetodo(array, target);
+        Console.WriteLine($"[{result[0]}, {result[1]}]");
+    }
 
+    public int[] TwoSumMetodo(int[] array, int target)
+    {
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] + array[j] == target)
+                {
+                    return [i, j];
+                }
+            }
+        }
+        return Array.Empty<int>();
     }
 }
 
