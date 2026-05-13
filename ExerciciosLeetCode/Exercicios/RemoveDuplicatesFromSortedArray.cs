@@ -4,7 +4,36 @@ public class RemoveDuplicatesFromSortedArray
 {
     public void Executar()
     {
+        int[] nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
 
+        int k = RemoveDuplicates(nums);
+
+        Console.WriteLine(k);
+    }
+
+    public int RemoveDuplicates(int[] nums)
+    {
+        // Se o array estiver vazio
+        if (nums.Length == 0)
+            return 0;
+
+        // Ponteiro que controla a posição
+        // do último elemento único
+        int k = 1;
+
+        // Percorre o array a partir do segundo elemento
+        for (int i = 1; i < nums.Length; i++)
+        {
+            // Se o número atual for diferente do anterior,
+            // encontramos um novo valor único
+            if (nums[i] != nums[i - 1])
+            {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+
+        return k;
     }
 }
 

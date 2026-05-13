@@ -9,5 +9,9 @@
 //twoSum.Executar();
 
 //Exercicio 26. LeetCode
-var removeDuplicates = new RemoveDuplicatesFromSortedArray();
-removeDuplicates.Executar();
+//var removeDuplicates = new RemoveDuplicatesFromSortedArray();
+//removeDuplicates.Executar();
+
+//Exercicio 28. LeetCode
+var indexFirstOcurrenceString = new FindIndexFirstOcurrenceString();
+indexFirstOcurrenceString.Executar();
